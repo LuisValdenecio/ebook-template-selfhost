@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { DiamondIcon } from '@/components/DiamondIcon'
@@ -23,11 +21,7 @@ export function Header() {
           </div>
         </div>
         <div className="hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0 lg:justify-end">
-          <Button
-            onClick={async () => {
-              await fetch('/api/emails', {method: "POST"});
-            }}
-          >Get your tickets</Button>
+          <Button href={process.env.STRIPE_PRODUCT_PAYMENTLINK}>Buy now</Button>
         </div>
       </Container>
     </header>
