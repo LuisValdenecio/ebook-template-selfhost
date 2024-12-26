@@ -10,7 +10,7 @@ import { stripe } from '@/lib/stripe';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
 
-export async function sendEmail(email : {email : string}) {
+async function sendEmail(email : {email : string}) {
     try {
         await resend.emails.send({
             from: 'ebookselfhostbundle@luistch.com',
