@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import { DM_Sans, Inter } from 'next/font/google'
+import { Toaster } from "@/components/ui/toaster"
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
@@ -20,10 +21,10 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: {
     template: '%s - DeceptiConf',
-    default: 'DeceptiConf - A community-driven design conference',
+    default: 'Host your ebook website TODAY!',
   },
   description:
-    'At DeceptiConf you’ll learn about the latest dark patterns being developed to trick even the smartest visitors, and you’ll learn how to deploy them without ever being detected.',
+    'Host your own ebook website and take control of your online presence. Get started today!',
 }
 
 export default function RootLayout({
@@ -42,6 +43,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full">
         <div className="flex w-full flex-col">{children}</div>
+        <Toaster />
       </body>
     </html>
   )
